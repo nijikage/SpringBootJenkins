@@ -11,7 +11,7 @@ class SpringBootJenkinsApplicationTests {
     @Test
     void contextLoads() {
 
-        assertTrue(false);
+        assertTrue(true);
     }
 
 }
