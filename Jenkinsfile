@@ -9,6 +9,7 @@ pipeline {
     stages {
         stage("Build") {
             steps {
+                echo env.BRANCH_NAME
                 sh "mvn clean compile"
             }
         }
@@ -21,6 +22,7 @@ pipeline {
 
         stage("Deploy to Production") {
             when {
+
                 expression {
                     return env.BRANCH_NAME == "master"
                 }
