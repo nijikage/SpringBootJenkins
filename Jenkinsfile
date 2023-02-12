@@ -1,3 +1,5 @@
+@Library(["piper-os"]) _
+
 pipeline {
     agent any
 
@@ -7,6 +9,10 @@ pipeline {
     }
 
     stages {
+        stage("Init") {
+            setupCommonPipelineEnvironment(script: this)
+        }
+
         stage("Build") {
             steps {
                 sh "mvn clean compile"
@@ -17,6 +23,16 @@ pipeline {
             steps {
                 sh "mvn test"
             }
+        }
+
+        stage("Buildpacks") {
+            cnbBuild(
+                script: this,
+                dockerConfigJsonCredentialsId: 'DOCKER_REGISTRY_CREDS',
+                containerImageName: 'springboot',
+                containerImageTag: 'v0.0.1',
+                containerRegistryUrl: 'localhost:5000'
+            )
         }
 
         stage("Deploy to Production") {
