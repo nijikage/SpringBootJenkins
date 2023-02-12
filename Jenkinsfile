@@ -10,7 +10,9 @@ pipeline {
 
     stages {
         stage("Init") {
-            setupCommonPipelineEnvironment(script: this)
+            steps {
+                setupCommonPipelineEnvironment(script: this)
+            }
         }
 
         stage("Build") {
@@ -26,13 +28,15 @@ pipeline {
         }
 
         stage("Buildpacks") {
-            cnbBuild(
-                script: this,
-                dockerConfigJsonCredentialsId: 'DOCKER_REGISTRY_CREDS',
-                containerImageName: 'springboot',
-                containerImageTag: 'v0.0.1',
-                containerRegistryUrl: 'localhost:5000'
-            )
+             steps {
+                cnbBuild(
+                    script: this,
+                    dockerConfigJsonCredentialsId: 'DOCKER_REGISTRY_CREDS',
+                    containerImageName: 'springboot',
+                    containerImageTag: 'v0.0.1',
+                    containerRegistryUrl: 'localhost:5000'
+                )
+            }
         }
 
         stage("Deploy to Production") {
