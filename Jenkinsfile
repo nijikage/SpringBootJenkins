@@ -30,8 +30,8 @@ pipeline {
         stage("Buildpacks") {
              steps {
                 cnbBuild(
-                    dockerImage: 'gcr.io/buildpacks/builder:v1',
                     script: this,
+                    dockerImage: 'gcr.io/buildpacks/builder:v1',
                     containerImageName: 'springboot',
                     containerImageTag: 'v0.0.1',
                     containerRegistryUrl: 'localhost:5000'
