@@ -31,7 +31,6 @@ pipeline {
              steps {
                 cnbBuild(
                     script: this,
-                    dockerConfigJsonCredentialsId: 'DOCKER_REGISTRY_CREDS',
                     containerImageName: 'springboot',
                     containerImageTag: 'v0.0.1',
                     containerRegistryUrl: 'localhost:5000'
