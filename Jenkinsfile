@@ -29,13 +29,7 @@ pipeline {
 
         stage("Buildpacks") {
              steps {
-                cnbBuild(
-                    script: this,
-                    dockerImage: 'gcr.io/buildpacks/builder:v1',
-                    containerImageName: 'springboot',
-                    containerImageTag: 'v0.0.1',
-                    containerRegistryUrl: 'localhost:5000'
-                )
+                sh 'pack build my-spring-boot-image --buildpack buildpack.yml'
             }
         }
 

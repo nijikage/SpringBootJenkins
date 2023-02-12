@@ -1,0 +1,10 @@
+---
+language: java
+
+dependencies:
+  - openjdk
+  - spring-boot
+
+config:
+  JAVA_ARGS: -XX:+UseContainerSupport -Djava.awt.headless=true
+  SPRING_BOOT_ARGS: --server.port=8080
