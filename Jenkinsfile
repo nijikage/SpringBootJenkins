@@ -1,7 +1,5 @@
-@Library(["piper-os"]) _
-
 pipeline {
-    agent any
+    agent 'buildpacks-agent'
 
     tools {
         maven 'maven'
@@ -9,12 +7,6 @@ pipeline {
     }
 
     stages {
-        stage("Init") {
-            steps {
-                setupCommonPipelineEnvironment(script: this)
-            }
-        }
-
         stage("Build") {
             steps {
                 sh "mvn clean compile"
@@ -28,8 +20,8 @@ pipeline {
         }
 
         stage("Buildpacks") {
-             steps {
-                sh 'pack build my-spring-boot-image --buildpack buildpack.yml'
+            steps {
+                sh 'pack build my-image --builder heroku/buildpacks --path .'
             }
         }
 
