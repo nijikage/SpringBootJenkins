@@ -41,10 +41,12 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                      <configuration>
+                              <image>
                               <name>spring-boot-jenkins</name>
                               <tags>
                                        <tag>spring-boot-jenkins:${project.version}</tag>
                               </tags>
+                              </image>
                      </configuration>
             </plugin>
         </plugins>
