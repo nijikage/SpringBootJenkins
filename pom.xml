@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.qmino</groupId>
-    <artifactId>SpringBootJenkins</artifactId>
+    <artifactId>spring-boot-jenkins</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>spring-boot-jenkins</name>
     <description>spring-boot-jenkins</description>
