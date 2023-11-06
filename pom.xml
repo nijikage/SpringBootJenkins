@@ -11,7 +11,7 @@
     <groupId>com.qmino</groupId>
     <artifactId>SpringBootJenkins</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>SpringBootJenkins</name>
+    <name>spring-boot-jenkins</name>
     <description>spring-boot-jenkins</description>
     <properties>
         <java.version>17</java.version>
