@@ -12,7 +12,7 @@
     <artifactId>SpringBootJenkins</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>SpringBootJenkins</name>
-    <description>SpringBootJenkins</description>
+    <description>spring-boot-jenkins</description>
     <properties>
         <java.version>17</java.version>
     </properties>
