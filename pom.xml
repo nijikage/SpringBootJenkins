@@ -43,8 +43,9 @@
         <version>3.4.0</version>
         <configuration>
           <to>
-            <image>myimage</image>
+            <image>docker.io/dimitricaluwaerts/my-app</image>
           </to>
+                 
         </configuration>
       </plugin>
             <plugin>
